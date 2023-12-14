@@ -93,7 +93,9 @@ const Ovarview = () => {
       <input
         className="date-input"
         type="month"
-        defaultValue={`2023-12`}
+        defaultValue={`${new Date().getFullYear()}-${
+          new Date().getMonth() + 1
+        }`}
         value={selectedDate}
         onChange={(e) => {
           console.log(e.target.value);
