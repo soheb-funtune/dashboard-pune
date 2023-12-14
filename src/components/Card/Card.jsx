@@ -10,7 +10,9 @@ const Card = ({ heading, children }) => {
       >
         {heading ? heading : "nothing"}
       </h3>
-      <div className="card-container">{children}</div>
+      <div className="card-container" style={{ justifyContent: "left" }}>
+        {children}
+      </div>
     </div>
   );
 };

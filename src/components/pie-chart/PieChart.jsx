@@ -40,5 +40,5 @@ export const dataFun = (data) => ({
 });
 
 export const PieChart = ({ data }) => {
-  return <Pie className="pie-chart" options={options} data={dataFun(data)} />;
+  return <Pie className="chart-js" options={options} data={dataFun(data)} />;
 };

@@ -70,7 +70,7 @@ export const BarChart = ({ data, titleText }) => {
       }}
     >
       <Bar
-        //  width={"auto"} height={"100%"}
+        className="chart-js"
         options={options(titleText)}
         data={dataFun(data)}
       />

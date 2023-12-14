@@ -28,10 +28,6 @@ export const options = () => ({
 
 export const DoughnutChart = ({ data }) => {
   return (
-    <Doughnut
-      className="doughnut-chart"
-      data={dataFun(data)}
-      options={options()}
-    />
+    <Doughnut className="chart-js" data={dataFun(data)} options={options()} />
   );
 };

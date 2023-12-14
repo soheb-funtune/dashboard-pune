@@ -1,6 +1,7 @@
 .overview-wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  width: calc(100% - 0px);
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
 }
 .innner-container {
@@ -16,7 +17,7 @@
   border-radius: 5px;
 }
 
-@media (max-width: 993px) {
+@media (max-width: 1400px) {
   .overview-wrapper {
     grid-template-columns: 1fr 1fr;
   }

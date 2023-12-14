@@ -5,10 +5,10 @@
 
   border-radius: 8px;
 }
-/* .card-wapper canvas {
-  position: absolute;
-  bottom: 0px;
-} */
+.card-wapper .chart-js {
+  height: auto;
+  width: 100%;
+}
 
 .card-heading {
   margin: 0px;
@@ -23,13 +23,13 @@
 
 .card-container {
   padding: 20px;
-  max-height: 400px;
+  /* max-height: 400px;
+  display: flex; */
 }
 
-.pie-chart,
-.doughnut-chart {
+.chart-js {
   width: auto;
-  max-height: 400px;
+  max-height: 100%;
 }
 
 @media (max-width: 993px) {
