@@ -93,11 +93,11 @@ const Ovarview = () => {
       <input
         className="date-input"
         type="month"
-        defaultValue={new Date()}
+        defaultValue={`2023-12`}
         value={selectedDate}
         onChange={(e) => {
           console.log(e.target.value);
-          setSelectedDate(e.target.value?.split("-")?.[1]);
+          setSelectedDate(e.target.value);
         }}
       />
       <div style={{ marginBottom: "20px" }} className="overview-wrapper">
