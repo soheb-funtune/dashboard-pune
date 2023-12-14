@@ -5,7 +5,7 @@ import { Doughnut } from "react-chartjs-2";
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 export const dataFun = (data) => ({
-  labels: ["Red", "Blue", "Yellow"],
+  labels: ["Completed", "On Going", "Yet to be Started"],
   datasets: data,
 });
 

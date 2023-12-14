@@ -22,13 +22,13 @@ export const options = {
       display: true,
       responsive: true,
       position: "bottom",
-      labels: {
-        boxWidth: 36,
-        padding: 10,
-        font: {
-          size: 15,
-        },
-      },
+      // labels: {
+      //   boxWidth: 36,
+      //   padding: 10,
+      //   font: {
+      //     size: 15,
+      //   },
+      // },
       align: "center",
     },
   },
