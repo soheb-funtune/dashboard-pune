@@ -1,0 +1,28 @@
+.overview-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.innner-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.date-input {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  box-shadow: 1px 1px 5px lightgray;
+  border-radius: 5px;
+}
+
+@media (max-width: 993px) {
+  .overview-wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 767px) {
+  .overview-wrapper {
+    grid-template-columns: 1fr;
+  }
+}

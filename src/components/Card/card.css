@@ -1,0 +1,44 @@
+.card-wapper {
+  position: relative;
+  box-sizing: border-box;
+  box-shadow: 1px 1px 5px lightgray;
+
+  border-radius: 8px;
+}
+/* .card-wapper canvas {
+  position: absolute;
+  bottom: 0px;
+} */
+
+.card-heading {
+  margin: 0px;
+  color: black;
+  font-weight: bold;
+  font-family: Lato;
+  font-size: 20px;
+  padding: 20px;
+  box-shadow: 1px 1px 0px transparent, 1px 1px 0px transparent,
+    1px 1px 1px lightgray, 1px 1px 0px transparent;
+}
+
+.card-container {
+  padding: 20px;
+  max-height: 400px;
+}
+
+.pie-chart,
+.doughnut-chart {
+  width: auto;
+  max-height: 400px;
+}
+
+@media (max-width: 993px) {
+  .card-wapper {
+    width: 300px;
+  }
+}
+@media (max-width: 767px) {
+  .card-wapper {
+    width: auto;
+  }
+}
