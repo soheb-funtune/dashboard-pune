@@ -6,6 +6,8 @@ import { BarChart } from "../bar-chart/BarChart";
 import { DoughnutChart } from "../doughnut-chart/DoughnutChart";
 // import AllProjects from "../all-projects-card/AllProjects";
 import { faker } from "@faker-js/faker";
+import { RadarChart } from "../radar-chart/RadarChart";
+import { GaugeChart } from "../Gauge-Chart/GaugeChart";
 
 const pieChartD = [
   {
@@ -103,6 +105,12 @@ const Ovarview = () => {
         }}
       />
       <div style={{ marginBottom: "20px" }} className="overview-wrapper">
+        <Card heading={"Gauge Chart Prac"}>
+          <GaugeChart />
+        </Card>
+        <Card heading={"Radial Chart Prac"}>
+          <RadarChart />
+        </Card>
         <Card heading={"Contracts"}>
           <PieChart data={allData?.pieChartData || pieChartD} />
         </Card>
