@@ -26,7 +26,7 @@ const data = {
   datasets: [
     {
       label: "First DataSet",
-      data: [20, 100, 12],
+      data: [80, 12],
       backgroundColor: (context) => {
         const chart = context?.chart;
         const { ctx, chartArea } = chart;
@@ -37,18 +37,74 @@ const data = {
         if (context?.index == 0) {
           return getGradient(chart);
         } else {
-          return "black";
+          return "gray";
         }
       },
-      borderColor: "none", // ["red", "green", "blue"],
+      borderColor: "white", // ["red", "green", "blue"],
       circumference: 180, // it is used to make Half Circle
       rotation: 270, // used to rotate Half Circle
+      cutout: "90%", // is cut the width of Bar by 90%
     },
   ],
 };
-const options = {};
+const options = {
+  plugins: {
+    legend: {
+      display: false,
+    },
+    tooltip: {
+      enabled: false,
+    },
+  },
+};
 export const GaugeChart = () => {
   const chartRef = useRef();
+  const gaugeChartText = {
+    id: "gaugeChartText",
+    afterDatasetsDraw(chart, args, pluginsOptions) {
+      const {
+        ctx,
+        data,
+        chartArea: { top, right, bottom, left, width, height },
+        scales: { r },
+      } = chart;
+      ctx.save();
+      const xCoor = chart.getDatasetMeta(0).data[0].x;
+      const yCoor = chart.getDatasetMeta(0).data[0].y;
+      const score = data?.datasets?.[0]?.data[0];
+      const score1 = data?.datasets?.[0]?.data[1];
+      // center value
+      ctx.font = "100px sans-serif";
+      ctx.textAlign = "center";
+      ctx.textBaseLine = "top";
+      ctx.fillText(score, xCoor, yCoor);
+      // center value
+      ctx.font = "20px sans-serif";
+      ctx.textAlign = "center";
+      ctx.textBaseLine = "top";
+      ctx.fillText(`${(score / (score + score1)) * 100}%`, xCoor, yCoor - 80);
+
+      ctx.fillRect(xCoor, yCoor, 400, 1);
+      //   left value
+      ctx.font = "15px sans-serif";
+      ctx.textAlign = "left";
+      ctx.textBaseLine = "bottom";
+      ctx.fillText(
+        `${Math.round((score / (score + score1)) * 100)}%`,
+        left,
+        yCoor + 20
+      );
+      // right value
+      ctx.font = "15px sans-serif";
+      ctx.textAlign = "right";
+      ctx.textBaseLine = "bottom";
+      ctx.fillText(
+        `${Math.round((score1 / (score + score1)) * 100)}%`,
+        right,
+        yCoor + 20
+      );
+    },
+  };
 
   // showing alert on onClick of Area of Pie chart
   const handleClick = (e) => {
@@ -72,6 +128,7 @@ export const GaugeChart = () => {
         onClick={handleClick}
         ref={chartRef}
         data={data}
+        plugins={[gaugeChartText]}
         options={options}
       />
     </div>
