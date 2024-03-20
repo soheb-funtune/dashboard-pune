@@ -1,3 +1,5 @@
+![pune-dashboard](https://github.com/soheb-funtune/dashboard-pune/assets/97585425/edf22ce9-7a8f-4c0f-ab76-3c20f01e3ab5)
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
